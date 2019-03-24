@@ -3,15 +3,6 @@ FROM conda/miniconda3
 LABEL maintainer="Ravin Kumar"
 
 ARG SRC_DIR
-ARG PYTHON_VERSION
-ARG PYSTAN_VERSION
-ARG PYRO_VERSION
-ARG EMCEE_VERSION
-
-ENV PYTHON_VERSION=${PYTHON_VERSION}
-ENV PYSTAN_VERSION=${PYSTAN_VERSION}
-ENV PYRO_VERSION=${PYRO_VERSION}
-ENV EMCEE_VERSION=${EMCEE_VERSION}
 
 # Change behavior of create_test.sh script
 ENV DOCKER_BUILD=true
@@ -26,9 +17,8 @@ RUN apt-get update && apt-get install -y git build-essential pandoc vim ffmpeg \
 
 
 # Copy requirements and environment installation scripts
-COPY $SRC_DIR/requirements.txt  opt/arviz/
-COPY $SRC_DIR/requirements-dev.txt  opt/arviz/
-COPY $SRC_DIR/scripts/ opt/arviz/scripts
+COPY $SRC_DIR/requirements.txt  opt/BayesianModelEvaluation/
+COPY $SRC_DIR/scripts/ opt/BayesianModelEvaluation/scripts
 WORKDIR /opt/arviz
 
 
@@ -46,6 +36,3 @@ RUN conda clean --all
 
 COPY $SRC_DIR /opt/arviz
 
-# Clear any cached models from copied from host filesystem
-RUN rm -f arviz/tests/saved_models/*.pkl
-RUN find -type d -name __pycache__ -exec rm -rf {} +
