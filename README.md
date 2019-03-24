@@ -1,2 +1,2 @@
-# Bayesian-Criticism-Tutorial
+# BayesianModelEvaluation
 Presented at scipy conference 2019
