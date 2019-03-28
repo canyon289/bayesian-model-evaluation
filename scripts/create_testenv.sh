@@ -9,7 +9,7 @@ command -v conda >/dev/null 2>&1 || {
 
 
 if [[ $* != *--global* ]]; then
-    ENVNAME="BayesianModelEvaluation"
+    ENVNAME="bayesian-model-evaluation"
 
     if conda env list | grep -q ${ENVNAME}
     then
