@@ -17,8 +17,8 @@ RUN apt-get update && apt-get install -y git build-essential pandoc vim ffmpeg \
 
 
 # Copy requirements and environment installation scripts
-COPY $SRC_DIR/requirements.txt  opt/BayesianModelEvaluation/
-COPY $SRC_DIR/scripts/ opt/BayesianModelEvaluation/scripts
+COPY $SRC_DIR/requirements.txt  opt/bayesian-model-evaluation/
+COPY $SRC_DIR/scripts/ opt/bayesian-model-evaluation/scripts
 WORKDIR /opt/arviz
 
 

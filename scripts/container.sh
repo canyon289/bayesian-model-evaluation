@@ -5,7 +5,7 @@ SRC_DIR=${SRC_DIR:-`pwd`}
 if [[ $* == *--build* ]]; then
     echo "Building Docker Image"
     docker build \
-        -t BayesianModelEvaluation \
+        -t bayesian-model-evaluation \
         -f $SRC_DIR/scripts/Dockerfile \
         --build-arg SRC_DIR=. $SRC_DIR \
         --rm
@@ -14,7 +14,7 @@ fi
 
 if [[ $* == *--notebook* ]]; then
     docker run \
-            --mount type=bind,source="$(pwd)",target=/opt/BayesianModelEvaluation/ BayesianModelEvaluation:latest \
-            -it -d -p 8888:8888 BayesianModelEvaluation \
+            --mount type=bind,source="$(pwd)",target=/opt/bayesian-model-evaluation/ bayesian-model-evaluation:latest \
+            -it -d -p 8888:8888 bayesian-model-evaluation \
             bash -c "--ip 0.0.0.0 --no-browser --allow-root"
 fi
