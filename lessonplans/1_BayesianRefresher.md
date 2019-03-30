@@ -7,8 +7,8 @@
 * Languages, but just because the software fits a model, it doesn’t mean the model is a good one
 * Demonstrate how arrays of data are not well suited for communication or understanding
 
-
-## Instructor Do: Fit model and demonstrate ArviZ (15 minutes)
+## Activities
+### Instructor Do: Fit model and demonstrate ArviZ (15 minutes)
 * Briefly run through 8 schools model non-centered
 * Show how model fit may look good but there seem to be lots of divergences.
 * Then show centered parametrization and how the plots change.
@@ -19,7 +19,7 @@
 and [Everything I need to know about Bayesian Statistics](https://statmodeling.stat.columbia.edu/2014/01/21/everything-need-know-bayesian-statistics-learned-eight-schools/)
 
 
-## Student Do: Fit your own model (15 minutes)
+### Student Do: Fit your own model (15 minutes)
 Ask students to fit their own models. Provide a list of suggestions from easy to complex.  
 Possible models from easy to hard
 
@@ -36,7 +36,7 @@ Be sure to fix any technical issues during this time to make sure every student
 can run ArviZ and one modeling language
 
 
-## All Do: Discussion about various modelling libraries, Bayesian Workflow (15 minutes)
+### All Do: Discussion about various modelling libraries, Bayesian Workflow (15 minutes)
 Talk through a complete end to end bayesian workflow 
 
 ![BayesianWorkflow](img/BayesianWorkflow.jpg)
@@ -51,4 +51,4 @@ and the three primary concerns are
 Explain how ArviZ is meant to unify points 2 and 3. ArviZ strives to let people
 model in their language of choice yet provide a common method for data
 exchange  and model visualization. Explain that there are 
-integrations outside of python, for example cmdstan and   [rainier](https://github.com/stripe/rainier)
+integrations outside of python, for example cmdstan and [rainier](https://github.com/stripe/rainier)
