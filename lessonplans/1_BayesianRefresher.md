@@ -13,16 +13,14 @@
 * Briefly run through 8 schools model non-centered
 * Show how model fit may look good but there seem to be lots of divergences.
 * Then show centered parametrization and how the plots change.
-
 * Explain why eight schools is so important
-* Highlight link through 
 * Showcase link to Michael Betancourt's analysis, 8 schools explainer in ArviZ Docs,
 and [Everything I need to know about Bayesian Statistics](https://statmodeling.stat.columbia.edu/2014/01/21/everything-need-know-bayesian-statistics-learned-eight-schools/)
 
 
 ### Student Do: Fit your own model (15 minutes)
-Ask students to fit their own models. Provide a list of suggestions from easy to complex.  
-Possible models from easy to hard. Students should start from a framework
+Ask students to fit their own models. Provide a list of suggestions from easy to complex. 
+Students should start from a framework
 where the model is either defined in code, or defined in statistics so
 they are able to execute the models without needing to define parameterization
 or code themselves.
