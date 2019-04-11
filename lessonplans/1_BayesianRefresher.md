@@ -16,12 +16,9 @@
   2. Ask what "I don't know" looks like in a graph
   3. Show globe and toss around a couple of times to get readings
   4. Ask students to open their student notebooks and type in the measurements
-* Then show centered parametrization and how the plots change.
-
 
 ### Student Do: Fit globe model (15 minutes)
-Ask students to fit the globe model in stan or PyMC3.
-Notebooks should be preloaded with multiple plots
+Ask students to fit the globe model in stan or PyMC3. Notebooks should be preloaded with multiple plots
 
 Ask students to try out some ArviZ plots. No need for complete understanding,
 moreso allow them time to get familiar with the docs and generally what ArviZ is.
