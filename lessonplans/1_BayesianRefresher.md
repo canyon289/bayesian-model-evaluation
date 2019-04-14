@@ -9,13 +9,11 @@
 
 ## Activities
 ### Instructor Do: Light Introduction to Bayes Theorom  (10 minutes)
-* Introduce Bayes Theorom mathematical definition
+* Introduce Bayes Theorem mathematical definition
 * Talk through prior, posterior, likelihood, and evidence
 * Start explaining globe example from Richard McElreath
-  1. Cover Globe and ask how much of surface is covered by water (in %)
+  1. Hide picture of globe and ask how much of surface is covered by water (in %)
   2. Ask what "I don't know" looks like in a graph
-  3. Show globe and toss around a couple of times to get readings
-  4. Ask students to open their student notebooks and type in the measurements
 
 ### Student Do: Fit globe model (15 minutes)
 Ask students to fit the globe model in stan or PyMC3. Notebooks should be preloaded with multiple plots
@@ -34,7 +32,7 @@ in this lecture.
 * Talk about Bayesian vs Frequentism
 * Explain that in both paradigms there's still more than just the data collection
 and model fitting. There's a workflow with diagnostic plots and visualizations
-* 
+ 
 * In the context of MCMC, a "distribution" is a collection of samples, possibly with more structure
 
 The points above necessitate the use of a Bayesian Workflow
