@@ -15,7 +15,7 @@ formats will help them create reproducible experiments and share results with ot
 * Lastly talk about how python objects are stored in memory, and that netcdf to InferenceData
 is like sql to pandas
 
-### Instructor Do: Demo functionality Xarray, InferenceData, and NetCDF (15 minutes)
+### Instructor Do: Demo functionality Xarray, InferenceData, and NetCDF (15 minutes
 Show students how to
 * Manually instantiate xarray dataarray and dataset
 * Selecting xarray data with dimensions
@@ -27,6 +27,8 @@ Show students how to
 Emphasize that xarray has a wide array of functionality and is useful in many
 contexts. In ArviZ however we only use a subset of the functionality although
 we do encourage students to read the xarray docs.
+
+For these examples use chains, draw, and vars, instead of arbitrary names so you  can interleave in conversations about MCMC and get students used to what xarray's look like in ArviZ
 
 ### Students Do: Xarray practice activities (10 minutes)
 Have students
