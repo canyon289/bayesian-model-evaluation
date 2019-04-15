@@ -36,7 +36,7 @@ and model fitting. There's a workflow with diagnostic plots and visualizations
 * In the context of MCMC, a "distribution" is a collection of samples, possibly with more structure
 
 The points above necessitate the use of a Bayesian Workflow
-![BayesianWorkflow](img/BayesianWorkflow.jpg)
+![BayesianWorkflow](../img/BayesianWorkflow.jpg)
 
 Explain that unfortunately multiple tools are required to go through all the steps
 and the four primary concerns are
