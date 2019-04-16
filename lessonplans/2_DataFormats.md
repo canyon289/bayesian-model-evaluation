@@ -15,7 +15,7 @@ formats will help them create reproducible experiments and share results with ot
 * Lastly talk about how python objects are stored in memory, and that netcdf to InferenceData
 is like sql to pandas
 
-### Instructor Do: Demo functionality Xarray, InferenceData, and NetCDF (15 minutes
+### Instructor Do: Demo functionality Xarray, InferenceData, and NetCDF (15 minutes)
 Show students how to
 * Manually instantiate xarray dataarray and dataset
 * Selecting xarray data with dimensions
