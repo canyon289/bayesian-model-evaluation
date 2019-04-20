@@ -8,29 +8,15 @@
 * Demonstrate how arrays of data are not well suited for communication or understanding
 
 ## Activities
-### Instructor Do: Introduction to Tutorial (15 minutes)
-* End to End model workflow
-* Briefly run through 8 schools model non-centered
-* Show how model fit may look good but there seem to be lots of divergences.
-* Then show centered parametrization and how the plots change.
-* Explain why eight schools is so important
-* Showcase link to Michael Betancourt's analysis, 8 schools explainer in ArviZ Docs,
-and [Everything I need to know about Bayesian Statistics](https://statmodeling.stat.columbia.edu/2014/01/21/everything-need-know-bayesian-statistics-learned-eight-schools/)
+### Instructor Do: Light Introduction to Bayes Theorom  (10 minutes)
+* Introduce Bayes Theorem mathematical definition
+* Talk through prior, posterior, likelihood, and evidence
+* Start explaining globe example from Richard McElreath
+  1. Hide picture of globe and ask how much of surface is covered by water (in %)
+  2. Ask what "I don't know" looks like in a graph
 
-
-### Student Do: Fit your own model (15 minutes)
-Ask students to fit their own models. Provide a list of suggestions from easy to complex. 
-Students should start from a framework
-where the model is either defined in code, or defined in statistics so
-they are able to execute the models without needing to define parameterization
-or code themselves.
-
-* Standard Coin Flipping
-* Coin Flipping where coin is picked from random from set of 3 coins
-* Bayesian Linear Regression (Take something from Osvaldo's book)
-* [Exoplanet model](https://github.com/dfm/exoplanet)
-* Radon model
-* Bring your own model
+### Student Do: Fit globe model (15 minutes)
+Ask students to fit the globe model in stan or PyMC3. Notebooks should be preloaded with multiple plots
 
 Ask students to try out some ArviZ plots. No need for complete understanding,
 moreso allow them time to get familiar with the docs and generally what ArviZ is.
@@ -38,16 +24,19 @@ Be sure to fix any technical issues during this time to make sure every student
 can run ArviZ and one modeling language
 
 
-### All Do: Discussion about various modelling libraries, Bayesian Workflow (15 minutes)
-Talk through a complete end to end bayesian workflow and how it differs
-from the other statistical workflow of frequentism
-
-* "Bayesianism vs frequentism" as "uncertain parameters vs uncertain data"
-* MCMC as a way of computing expectations
+### All Do: Discussion about Statistics and Machine Learning Ecosystem (20 minutes)
+* Talk about how we fit model with Markov Chain Monte Carlo, which takes samples.
+Other methods exist but MCMC is most popular right now and what we will focus on
+in this lecture.
+* Talk about Bayesian model fitting versus "standard machine learning"
+* Talk about Bayesian vs Frequentism
+* Explain that in both paradigms there's still more than just the data collection
+and model fitting. There's a workflow with diagnostic plots and visualizations
+ 
 * In the context of MCMC, a "distribution" is a collection of samples, possibly with more structure
 
 The points above necessitate the use of a Bayesian Workflow
-![BayesianWorkflow](img/BayesianWorkflow.jpg)
+![BayesianWorkflow](../img/BayesianWorkflow.jpg)
 
 Explain that unfortunately multiple tools are required to go through all the steps
 and the four primary concerns are
