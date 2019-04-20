@@ -28,7 +28,9 @@ Emphasize that xarray has a wide array of functionality and is useful in many
 contexts. In ArviZ however we only use a subset of the functionality although
 we do encourage students to read the xarray docs.
 
-For these examples use chains, draw, and vars, instead of arbitrary names so you  can interleave in conversations about MCMC and get students used to what xarray's look like in ArviZ
+For these examples use chains, draw, and vars, instead of arbitrary names
+so you  can interleave in conversations about MCMC and get students used
+to what xarrays look like in ArviZ
 
 ### Students Do: Xarray practice activities (10 minutes)
 Have students
