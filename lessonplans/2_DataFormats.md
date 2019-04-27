@@ -3,26 +3,27 @@ Showcase the power of Xarray and az.InferenceData in handling large models
 with many variables. Leave students with understanding of how common data
 formats will help them create reproducible experiments and share results with others
 
+* Introduce MCMC basics
 * Introduce xarray, InferenceData and NetCDF
 * Show basic functionality like indexing and filtering
 * Explain relation to InferenceData and NetCDF
 * Leave students with understanding of why this dataformat was chosen
 
 ## Activities
-### Instructor Do: Xarray, InferenceData, and NetCDF introduction (5 minutes)
-* Start with pandas and explain how xarray allows for more dimensions than just 2
-* From Xarray explain how xarray doesn't allow for groups, hence the az.InferenceData wrapper
-* Lastly talk about how python objects are stored in memory, and that netcdf to InferenceData
-is like sql to pandas
 
-### Instructor Do: Demo functionality Xarray, InferenceData, and NetCDF (10 minutes)
-Show students how to
-* Manually instantiate xarray dataarray and dataset
-* Selecting xarray data with dimensions
-* Selecting xarray data with coordinates
-* Loading inferencedata from ArviZ
-* Getting Xarray dataset from inferencedata
-* Generating InferenceData from model fit
+### Instructor Do: MCMC basics (25 minutes)
+* Explain basic MCMC theory 
+* Discuss chains, samples, and draws in theory and how they relate to data structures
+* Demononstrate how Single Variable Single Chain and how that fits into numpy array
+* Demonstrate Single Variable Multiple chain and how that fits into pandas dataframe
+* Explain that typical MCMC is done with multiple variables and multiple chains which is why xarray is useful
+* Demonstrate how to work with xarray
+    * Selecting xarray data with dimensions
+    * Selecting xarray data with coordinates
+    * Loading inferencedata from ArviZ
+* Show how InferenceData is used to maintain references to multiple xarray objects
+* Demonstrate how InferenceData can be generated from model fit
+* Explain how NetCDF can be used to persist ArviZ Inference data objects to disk.
 
 Emphasize that xarray has a wide array of functionality and is useful in many
 contexts. In ArviZ however we only use a subset of the functionality although
