@@ -8,8 +8,7 @@ https://twiecki.io/blog/2015/11/10/mcmc-sampling/
 
 import numpy as np
 import scipy.stats as stats
-
-np.set_seed(0)
+np.random.seed(0)
 
 
 N_mu_30_sd_1_data = stats.norm.rvs(loc=30, scale=1, size=1000).flatten()
