@@ -8,7 +8,7 @@
 * Demonstrate how arrays of data are not well suited for communication or understanding
 
 ## Activities
-### Instructor Do: Light Introduction to Bayes Theorom  (10 minutes)
+### Instructor Do: Light Introduction to Bayes Theorem  (10 minutes)
 * Introduce Bayes Theorem mathematical definition
 * Talk through prior, posterior, likelihood, and evidence
 * Start explaining globe example from Richard McElreath
