@@ -1,6 +1,6 @@
 # Section 3: Single Model Diagnostics (~1 hour)
 Demonstrate model evaluation and criticism techniques for one model.
-Show how plot diagnostics. Demonstrate the difference between “good” and “bad”
+Show how to plot diagnostics. Demonstrate the difference between “good” and “bad”
 versions of plots so students are able to use and diagnose their own models
 Demonstrate how models can be diagnosed
 Lightly introduce theory for MCMC and HMC to give context
@@ -8,7 +8,7 @@ Lightly introduce theory for MCMC and HMC to give context
 ## Activities
 ### Instructor Do: Talk through HMC theory (15 minutes)
 Lightly explain the theory behind Markov Chain Monte Carlo, with special
-emphasis on how MCMC is not always guaranteed to be "correct"
+emphasis on how MCMC has theoretical guarantees, but those guarantees are asymptotic, and may take literally infinite time to be true.
 
 Due to this there are numerous visual diagnostics for MCMC plots such as
 * Autocorrelation
@@ -17,7 +17,7 @@ Due to this there are numerous visual diagnostics for MCMC plots such as
 MCMC is not just one method though, but a set of related methods. For 
 Hamiltonian Monte Carlo there are additional diagnoses
 * Energy Plot
-* Divergences in Plot Parallel and pair plot
+* Divergences in plot parallel, pair plot, and trace plot
 
 ### Students Do: Practice using plots to diagnose models (15 minutes)
 Have students fit and evaluate the eight schools models. Using diagnostics
@@ -26,8 +26,8 @@ explored more effectively
 
 ### Instructor Do: Introduce numerical diagnoses (5 minutes)
 Explain intuition and formulas for calculating numerical diagnoses. Mention
-how these calculations are still be refined and show references from Gelman
-and Aki Vehtari demonstarting this fact
+how these calculations are still being refined and show references from Gelman
+and Aki Vehtari demonstrating this fact
 * Effective_sample_size/Rhat 
 * Geweke
 
