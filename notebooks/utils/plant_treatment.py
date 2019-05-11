@@ -7,32 +7,33 @@ import numpy as np
 import arviz as az
 from scipy import stats
 
-DATASETS = [{"β":20, "α":4, "noise_scale":2, "name":"GreenPower.nc"},
-            {"β":20, "α":1, "noise_scale":0, "name":"RootsGalore.nc"},
-            {"β":20, "α":-2, "noise_scale":1, "name":"BudgetFertilizer.nc"}]
+np.random.seed(0)
 
-def data_generator(β, α, noise_scale, points = 20):
+DATASETS = [{"β":3, "noise_scale":4, "name":"GreenPower.nc"},
+            {"β":2, "noise_scale":.1, "name":"RootsGalore.nc"},
+            {"β":-1, "noise_scale":1, "name":"BudgetFertilizer.nc"}]
+
+def data_generator(β, noise_scale, points = 50, **kwargs):
     """Generates data sets for use in section 4"""
     
-    x = np.random.uniform(0,10, points)
+    x = np.random.randint(0,10, points)
 
     # Constant Noise from noisy sensors
-    ϵ =  stats.norm(loc=0, scale=noise_scale).rvs(size=points)
-    y = α + β*x + ϵ
+    ϵ = stats.norm(scale=noise_scale).rvs(size=points)
+    y = 10 + β*x + ϵ
     return x, y
 
 
 def inference_generator(x, y, draws=500, tune=500):
     """Assumes linear model in form of data_generator"""
-    with pm.Model() as lin_constant_noise:
+    with pm.Model() as model:
         # These Alpha and Beta are estimators for the givens above
-        beta = pm.Normal("beta", 0,1)
-        alpha = pm.Normal("alpha", 0,1)
+        beta = pm.Normal("beta", 1)
 
         # Standard deviation can only be positive
         epsilon = pm.HalfCauchy("epsilon", 1)
 
-        y_est = pm.Normal("y_est", mu=alpha + beta* x, sd=epsilon, observed=y)
+        y_est = pm.Normal("y_est", mu=10+beta*x, sd=epsilon, observed=y)
 
         trace = pm.sample(draws=draws, tune=tune)
         return trace
@@ -43,7 +44,7 @@ def netcdf_generator():
         name = dataset.pop("name")
 
         x,y = data_generator(**dataset)
-        trace = inference_generator(x,y, tune=1000)
+        trace = inference_generator(x,y, draws=2000, tune=2000)
 
         data = az.from_pymc3(trace)
         
