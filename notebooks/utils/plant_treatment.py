@@ -7,9 +7,9 @@ import numpy as np
 import arviz as az
 from scipy import stats
 
-DATASETS = [{"β":20, "α":4, "noise_scale":2, "name":"TreatmentA.nc"},
-            {"β":20, "α":1, "noise_scale":0, "name":"TreatmentB.nc"},
-            {"β":20, "α":-2, "noise_scale":1, "name":"TreatmentC.nc"}]
+DATASETS = [{"β":20, "α":4, "noise_scale":2, "name":"GreenPower.nc"},
+            {"β":20, "α":1, "noise_scale":0, "name":"RootsGalore.nc"},
+            {"β":20, "α":-2, "noise_scale":1, "name":"BudgetFertilizer.nc"}]
 
 def data_generator(β, α, noise_scale, points = 20):
     """Generates data sets for use in section 4"""
