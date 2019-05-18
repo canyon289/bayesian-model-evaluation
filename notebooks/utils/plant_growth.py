@@ -57,7 +57,7 @@ def netcdf_generator():
 
     x,y = data_generator()
 
-    pd.DataFrame({"days":x, "plant_height":y})
+    pd.DataFrame({"days":x, "plant_height":y}).to_csv("PlantGrowthData.csv")
        
     for func in (linear_model, log_model):
         name, trace = func(x,y, draws=2000, tune=2000)
