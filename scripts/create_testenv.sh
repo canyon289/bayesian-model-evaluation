@@ -7,35 +7,8 @@ command -v conda >/dev/null 2>&1 || {
   exit 1;
 }
 
-
-if [[ $* != *--global* ]]; then
-    ENVNAME="bayesian-model-evaluation"
-
-    if conda env list | grep -q ${ENVNAME}
-    then
-        echo "Environment ${ENVNAME} already exists, keeping up to date"
-    else
-        echo "Creating environment ${ENVNAME}"
-        conda create -n ${ENVNAME} --yes pip python=${PYTHON_VERSION}
-    fi
-
-    # Activate environment immediately
-    source activate ${ENVNAME}
-
-    if [ "$DOCKER_BUILD" = true ] ; then
-        # Also add it to root bash settings to set default if used later
-
-        echo "Creating .bashrc profile for docker image"
-        echo "set conda_env=${ENVNAME}" > /root/activate_conda.sh
-        echo "source activate ${ENVNAME}" >> /root/activate_conda.sh
-
-
-    fi
-fi
-
-
-# Install ArviZ dependencies
-pip install --upgrade pip==18.1
+# Install tutorial dependencies
+pip install --upgrade pip
 
 
 #  Install editable using the setup.py
