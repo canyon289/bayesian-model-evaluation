@@ -7,8 +7,8 @@ command -v conda >/dev/null 2>&1 || {
   exit 1;
 }
 
-# Install ArviZ dependencies
-pip install --upgrade pip==18.1
+# Install tutorial dependencies
+pip install --upgrade pip
 
 
 #  Install editable using the setup.py
