@@ -33,7 +33,7 @@ def linear_model(x, y, draws=500, tune=500):
         y_est = pm.Normal("y_est", mu=α + β*x, sd=ϵ, observed=y)
         trace = pm.sample(draws=5000, tune=2000)
         
-    return "linear_plant_growth.nc", trace
+    return "data_linear_plant_growth.nc", trace
 
 
 def log_model(x, y, draws=500, tune=500):
@@ -49,7 +49,7 @@ def log_model(x, y, draws=500, tune=500):
         y_est = pm.Normal("y_est", mu= β*np.log(x+α), sd=ϵ, observed=y)
         trace = pm.sample(draws=5000, tune=2000)
 
-    return "log_plant_growth.nc", trace 
+    return "data_log_plant_growth.nc", trace 
 
 
 def netcdf_generator():
@@ -57,7 +57,7 @@ def netcdf_generator():
 
     x,y = data_generator()
 
-    pd.DataFrame({"days":x, "plant_height":y}).to_csv("PlantGrowthData.csv")
+    pd.DataFrame({"days":x, "plant_height":y}).to_csv("PlantGrowthData.csv", index=False)
        
     for func in (linear_model, log_model):
         name, trace = func(x,y, draws=2000, tune=2000)
