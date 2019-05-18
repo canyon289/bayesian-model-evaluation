@@ -19,7 +19,7 @@ RUN apt-get update && apt-get install -y git build-essential pandoc vim ffmpeg \
 # Copy requirements and environment installation scripts
 COPY $SRC_DIR/requirements.txt  opt/bayesian-model-evaluation/
 COPY $SRC_DIR/scripts/ opt/bayesian-model-evaluation/scripts
-WORKDIR /opt/arviz
+WORKDIR /opt/bayesian-model-evaluation
 
 
 # Create conda environment. Defaults to Python 3.6
@@ -34,5 +34,5 @@ RUN echo ". /root/activate_conda.sh" > /root/.bashrc
 # Remove conda cache
 RUN conda clean --all
 
-COPY $SRC_DIR /opt/arviz
+COPY $SRC_DIR /opt/bayesian-model-evaluation
 
