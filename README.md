@@ -60,7 +60,7 @@ Please install all of the packages listed in the `requirements.txt` file.
 pip install -r requirements.txt
 ```
 
-### 3c. Docker Users
+### 3c. `Docker` Users
 
 An image can be built from the root directory of the repository using the command.
 This will build an image on your computer with all dependencies and environment
