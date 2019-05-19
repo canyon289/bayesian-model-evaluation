@@ -15,6 +15,6 @@ fi
 if [[ $* == *--notebook* ]]; then
     docker run \
             --mount type=bind,source="$(pwd)",target=/opt/bayesian-model-evaluation/ \
-            -it -d -p 8888:8888 bayesian-model-evaluation:latest \
-            bash -c "jupyter-lab --ip 0.0.0.0 --no-browser --allow-root"
+            -it -p 8888:8888 bayesian-model-evaluation:latest \
+            bash -c "jupyter-lab --ip 0.0.0.0 --allow-root"
 fi
