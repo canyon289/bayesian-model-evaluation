@@ -1,4 +1,4 @@
-[![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/arviz-devs/bayesian-model-evaluation/master)
+inder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/arviz-devs/bayesian-model-evaluation/master)
 
 # Bayesian Model Evaluation and Criticism
 
@@ -62,8 +62,8 @@ pip install -r requirements.txt
 
 ### 3c. Docker Users
 
-An image can be built from the root directory of the repository using the command
-
+An image can be built from the root directory of the repository using the command.
+This will build an image on your computer with all dependencies and environment
 ```bash
 ./scripts/container.sh --build
 ```
@@ -91,7 +91,7 @@ In the terminal, execute `jupyter lab`.
 Navigate to the `notebooks` then `1_BayesianWorkflow` and open notebook 
 1_Ins_BayesRefresher.ipynb.
 
-### 4d. Want to view static HTML notebooks
+### 4a. Want to view static HTML notebooks
 
 If you're interested in only viewing the static HTML versions of the notebooks 
 you can [view them on github](https://github.com/arviz-devs/bayesian-model-evaluation/tree/master/notebooks)
