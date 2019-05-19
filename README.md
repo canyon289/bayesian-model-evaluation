@@ -1,4 +1,4 @@
-inder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/arviz-devs/bayesian-model-evaluation/master)
+[![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/arviz-devs/bayesian-model-evaluation/master)
 
 # Bayesian Model Evaluation and Criticism
 
