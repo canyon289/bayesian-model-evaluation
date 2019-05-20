@@ -1,4 +1,4 @@
-arviz==0.3.3
+arviz==0.4.0
 atomicwrites==1.2.1
 attrs==18.2.0
 backcall==0.1.0
