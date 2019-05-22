@@ -2,16 +2,16 @@
 
 # Bayesian Model Evaluation and Criticism
 
-How to share Bayesian analysis, verify inference run results, and compare models
+How to share Bayesian analysis, verify inference, run results, and compare models.
 
 # Getting started
 
 To get started, first identify whether you:
 
-1. Prefer to use the `conda` package manager (which ships with the Anaconda distribution of Python), or if you
-2. Prefer to use pip 
-3. Prefer to use `docker`
-4. Do not want to mess around with dev-ops.
+1. Prefer to use the `conda` package manager (which ships with the [Anaconda distribution of Python](https://www.anaconda.com/)), 
+2. Prefer to use `pip`,
+3. Prefer to use `docker`,
+4. Do not want to mess around with dev-ops, or
 5. Only want to view the website version of the notebooks.
 
 ## 1. Clone the repository locally
@@ -26,7 +26,7 @@ Alternatively, you can download the zip file of the repository at the top of the
 
 ## 2. Download Anaconda (if you haven't already)
 
-If you do not already have the [Anaconda distribution](https://www.anaconda.com/download/) of Python 3, go get it (note: you can also set up your project environment w/out Anaconda using `pip` to install the required packages; however Anaconda is great for Data Science and we encourage you to use it).
+If you do not already have the [Anaconda distribution](https://www.anaconda.com/download/) of Python 3, go get it (note: you can also set up your project environment w/out Anaconda using `pip` to install the required packages; however Anaconda is great for data science and we encourage you to use it).
 
 ## 3. Set up your environment
 
@@ -50,7 +50,7 @@ conda activate bayes-eval
 source activate bayes-eval
 ```
 
-Then follow the instructions for `pip` users
+Then follow the instructions for `pip` users.
 
 ### 3b. `pip` users
 
@@ -74,7 +74,7 @@ Once an image is built a container can be started with the command
 ```
 
 In your terminal a URL for the notebook server will be displayed. Copy
-and paste that into a browser. With that you'll have jupyter in a container!
+and paste that into a browser. With that you'll have Jupyter in a container!
 If you're using docker you can skip step 4.
 
 ### 3d. Don't want to mess with dev-ops
@@ -86,10 +86,10 @@ If you don't want to mess around with dev-ops, click the following badge to get 
 
 ### 4. Open your Jupyter notebook in Jupyter Lab!
 
-In the terminal, execute `jupyter lab`.
+In the terminal, navigate to this directory and execute `jupyter lab`.
 
 Navigate to the `notebooks` then `1_BayesianWorkflow` and open notebook 
-1_Ins_BayesRefresher.ipynb.
+`1_Ins_BayesRefresher.ipynb`.
 
 ### 4a. Want to view static HTML notebooks
 
@@ -99,10 +99,11 @@ you can [view them on github](https://github.com/arviz-devs/bayesian-model-evalu
 # Acknowledgements
 We would like to thank the whole Bayes community for being open with
 learnings and material. For this tutorial in particular we'd like to thank
-Ari Hartikainen, Osvaldo Martin and Eric Ma for providing feedback and content.
+Ari Hartikainen, Osvaldo Martin, and Eric Ma for providing feedback and content.
 
 # Feedback
 
 Please leave feedback for us [here](https://forms.gle/cUStHUo5k9yZcrUn9)! 
 We'll use this information to help improve the teaching and delivery of the material.
+[Issues](https://github.com/arviz-devs/bayesian-model-evaluation/issues) and [pull requests](https://github.com/arviz-devs/bayesian-model-evaluation/pulls) are also encouraged if you would like!
 
