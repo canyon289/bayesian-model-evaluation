@@ -1,4 +1,4 @@
-# Section 5: Multiple Model Comparison (~30 minutes)
+# Section 5: Multiple Model Comparison (30 minutes)
 Demonstrate how multiple models can be compared to determine which model is
 best suited for analysis and data. Introduce techniques such as
 Information Criteria and Leave One Out Validation

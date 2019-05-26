@@ -1,4 +1,4 @@
-# Section 3: Single Model Diagnostics (~1 hour)
+# Section 3: Single Model Diagnostics (55 minutes)
 Demonstrate model evaluation and criticism techniques for one model.
 Show how to plot diagnostics. Demonstrate the difference between “good” and “bad”
 versions of plots so students are able to use and diagnose their own models
