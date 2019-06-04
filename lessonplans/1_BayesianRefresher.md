@@ -1,4 +1,4 @@
-# Section 1: Bayesian refresher and Introduction to ArviZ
+# Section 1: Bayesian refresher and Introduction to ArviZ (50 Minutes)
 
 * Walk students through a Bayesian Analysis and showcase all portions of the Bayesian workflow.  
 * Have students work together with instructor to gain confidence in seeing a full analysis.
@@ -24,7 +24,7 @@ Be sure to fix any technical issues during this time to make sure every student
 can run ArviZ and one modeling language
 
 
-### All Do: Discussion about Statistics and Machine Learning Ecosystem (20 minutes)
+### All Do: Discussion about Statistics and Machine Learning Ecosystem (15 minutes)
 * Talk about how we fit model with Markov Chain Monte Carlo, which takes samples.
 Other methods exist but MCMC is most popular right now and what we will focus on
 in this lecture.

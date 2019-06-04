@@ -1,4 +1,4 @@
-# Section 2: Xarray, Inference Data, NetCDF (40 minutes)
+# Section 2: Xarray, Inference Data, NetCDF (45 minutes)
 Showcase the power of Xarray and az.InferenceData in handling large models
 with many variables. Leave students with understanding of how common data
 formats will help them create reproducible experiments and share results with others
