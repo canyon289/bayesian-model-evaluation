@@ -6,7 +6,8 @@ Good statisticians are able to explain their choices, justify their numbers,
 evaluate their own models, and share their results (in a reproducible fashion)! 
 This tutorial demonstrates how to do all the above, using ArviZ.
 
-# Getting started
+
+# Getting things setup
 
 To get started, first identify whether you:
 
