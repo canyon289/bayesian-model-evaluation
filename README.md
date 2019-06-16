@@ -2,15 +2,17 @@
 
 # Bayesian Model Evaluation and Criticism
 
-How to share Bayesian analysis, verify inference, run results, and compare models.
+Good statisticians are able to explain their choices, justify their numbers,
+evaluate their own models, and share their results (in a reproducible fashion)! 
+This tutorial demonstrates how to do all the above, using ArviZ.
 
 # Getting started
 
 To get started, first identify whether you:
 
 1. Prefer to use the `conda` package manager (which ships with the [Anaconda distribution of Python](https://www.anaconda.com/)), 
-2. Prefer to use `pip`,
-3. Prefer to use `docker`,
+2. Prefer to use `pip`
+3. Prefer to use `docker`
 4. Do not want to mess around with dev-ops, or
 5. Only want to view the website version of the notebooks.
 
