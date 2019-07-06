@@ -3,7 +3,7 @@ atomicwrites==1.2.1
 attrs==18.2.0
 backcall==0.1.0
 bleach==3.1.0
-certifi==2019.3.9
+certifi
 cftime==1.0.3.4
 cycler==0.10.0
 Cython==0.29.2
