@@ -6,6 +6,11 @@ Good statisticians are able to explain their choices, justify their numbers,
 evaluate their own models, and share their results (in a reproducible fashion)! 
 This tutorial demonstrates how to do all the above, using ArviZ.
 
+# Agenda
+**Section 1:** Bayesian Workflow  
+**Section 2:** Data Structures  
+**Section 3:** Single Model Diagnostics  
+**Section 4:** Single Plot Diagnostics
 
 # Getting things setup
 
