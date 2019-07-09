@@ -1,0 +1,888 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>Getting started with MCMC</title>
+
+	<link rel="stylesheet" href="css/reset.css">
+	<!-- <link rel="stylesheet" href="css/reveal.css"> -->
+	<!-- <link rel="stylesheet" href="css/theme/simple.css"> -->
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/css/reveal.css"
+		integrity="sha256-82G4efqUnm3xpPDdE5JH3ghUZUebk35mZJXrWzPRnPk=" crossorigin="anonymous" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/css/theme/simple.min.css"
+		integrity="sha256-HFRznnsB/3mRRfNZzcfdTjetJAOepiqIg4/YfC9CIv4=" crossorigin="anonymous" />
+	<link rel="stylesheet" href="css/custom.css">
+
+	<!-- Theme used for syntax highlighting of code -->
+	<link rel="stylesheet" href="lib/css/monokai.css">
+
+	<!-- Printing and PDF exports -->
+	<script>
+		var link = document.createElement('link');
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+		document.getElementsByTagName('head')[0].appendChild(link);
+	</script>
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section>
+				<h3>Getting Started with MCMC</h3>
+				<video autoplay loop>
+					<source data-src="img/small_steps.mp4" type="video/mp4" />
+				</video>
+			</section>
+
+			<section>
+				<h3>Outcomes as distributions</h3>
+				<div>
+					<img data-src="img/profits.png" />
+				</div>
+				<ul>
+					<li>Average profit?</li>
+					<li>How likely to make more than $90k?</li>
+					<li>How long is runway?</li>
+				</ul>
+			</section>
+
+			<section>
+				<h3>Outcomes as distributions</h3>
+				<div>
+					<img data-src="img/golf.png" />
+				</div>
+			</section>
+
+			<section>
+				<h3>Outcomes as distributions</h3>
+				<div>
+					<img data-src="img/stroke.png" />
+				</div>
+			</section>
+
+			<section>
+				<h3>Outcomes as distributions</h3>
+				<div>
+					<img data-src="img/match.png" />
+				</div>
+			</section>
+
+
+			<section>
+				<h3>Expectations</h3>
+				<div id="left">
+					<img data-src="img/golf.png">
+				</div>
+				<div id="right">
+					<img height=200 data-src="img/profits.png" />
+				</div>
+				<p>
+					$$
+					\mathbb{E}_p[f] = \int f(x) p(x)~dx
+					$$
+				</p>
+			</section>
+
+			<section>
+				<h3>Expectations</h3>
+				<p>
+					$$
+					\mathbb{E}_p[f] = \int f(x) p(x)~dx \approx \frac{1}{k}\sum_{j=1}^k f(x_j)
+					$$
+					where
+
+					$$
+					x_j \text{ is distributed like } p
+					$$
+				</p>
+			</section>
+
+			<section>
+				<h3>Do the math</h3>
+
+				<p>
+					$$
+					u \sim \operatorname{Uniform}(0, 1)
+					$$
+					$$
+					\text{solve } \int_{-\infty}^x p(t)~dt = u
+					$$
+				</p>
+				<div>
+					<img data-src="img/cdf.png" />
+				</div>
+
+			</section>
+
+			<section>
+				<h3>Do some simulations</h3>
+
+				<div>
+					<img data-src="img/circle_100.png" />
+				</div>
+
+			</section>
+
+			<section>
+				<h3>Do some simulations</h3>
+
+				<div>
+					<img data-src="img/circle_1000.png" />
+				</div>
+
+			</section>
+
+			<section>
+				<h3>Do some simulations</h3>
+
+				<div>
+					<img data-src="img/circle_10000.png" />
+				</div>
+
+			</section>
+
+			<section>
+				<h3>MCMC!</h3>
+				<video autoplay loop>
+					<source data-src="img/medium_steps.mp4" type="video/mp4" />
+				</video>
+			</section>
+
+			<section>
+				<video autoplay loop height="700">
+					<source data-src="img/histogram.mp4" type="video/mp4" />
+				</video>
+			</section>
+
+			<section>
+				<h3>MCMC!</h3>
+
+				<pre><code data-trim data-noescape class="python">def metropolis_hastings(n_samples, pdf):
+    position = 0.
+    samples = []
+    for _ in range(n_samples):
+	proposal = np.random.normal(loc=position)
+        accept_prob = pdf(proposal) / pdf(position)
+        if np.random.rand() < accept_prob:
+            position = proposal
+        samples.append(position)
+    return samples
+				</code></pre>
+
+			</section>
+
+			<section>
+				<h3>Traceplot Quiz!</h3>
+
+				<div>
+					<img data-src="img/quiz0.png" />
+				</div>
+
+			</section>
+
+			<section>
+				<h3>Traceplot Quiz!</h3>
+
+				<div>
+					<img data-src="img/quiz0a.png" />
+				</div>
+
+			</section>
+
+			<section>
+				<h3>Traceplot Quiz!</h3>
+
+				<div>
+					<img data-src="img/quiz1.png" />
+				</div>
+
+			</section>
+
+			<section>
+				<h3>Traceplot Quiz!</h3>
+
+				<div>
+					<img data-src="img/quiz1a.png" />
+				</div>
+
+			</section>
+
+			<section>
+				<h3>Traceplot Quiz!</h3>
+
+				<div>
+					<img data-src="img/quiz2.png" />
+				</div>
+
+			</section>
+
+			<section>
+				<h3>Traceplot Quiz!</h3>
+
+				<div>
+					<img data-src="img/quiz2a.png" />
+				</div>
+
+			</section>
+
+			<section>
+				<h3>Traceplot Quiz!</h3>
+
+				<div>
+					<img data-src="img/quiz3.png" />
+				</div>
+
+			</section>
+
+			<section>
+				<h3>Traceplot Quiz!</h3>
+
+				<div>
+					<img data-src="img/quiz3a.png" />
+				</div>
+
+			</section>
+
+			<section>
+				<h3>Traceplot Quiz!</h3>
+
+				<div>
+					<img data-src="img/quiz4.png" />
+				</div>
+
+			</section>
+
+			<section>
+				<h3>Traceplot Quiz!</h3>
+
+				<div>
+					<img data-src="img/quiz4a.png" />
+				</div>
+
+			</section>
+
+			<section>
+				<h3>Traceplot Quiz!</h3>
+
+				<div>
+					<img data-src="img/quiz5.png" />
+				</div>
+
+			</section>
+
+			<section>
+				<h3>Traceplot Quiz!</h3>
+
+				<div>
+					<img data-src="img/quiz5a.png" />
+				</div>
+
+			</section>
+
+			<section>
+				<h3>Traceplot Quiz!</h3>
+
+				<div>
+					<img data-src="img/quiz6.png" />
+				</div>
+
+			</section>
+
+			<section>
+				<h3>Traceplot Quiz!</h3>
+
+				<div>
+					<img data-src="img/quiz6a.png" />
+				</div>
+
+			</section>
+
+			<section>
+				<h3>Traceplot Quiz!</h3>
+
+				<div>
+					<img data-src="img/quiz7.png" />
+				</div>
+
+			</section>
+
+			<section>
+				<h3>Traceplot Quiz!</h3>
+
+				<div>
+					<img data-src="img/quiz7a.png" />
+				</div>
+
+			</section>
+
+			<section>
+				<h3>Traceplot Quiz!</h3>
+
+				<div>
+					<img data-src="img/quiz8.png" />
+				</div>
+
+			</section>
+
+			<section>
+				<h3>Traceplot Quiz!</h3>
+
+				<div>
+					<img data-src="img/quiz8a.png" />
+				</div>
+
+			</section>
+
+			<section>
+				<h3>Traceplot Quiz!</h3>
+
+				<div>
+					<img data-src="img/quiz9.png" />
+				</div>
+
+			</section>
+
+			<section>
+				<h3>Traceplot Quiz!</h3>
+
+				<div>
+					<img data-src="img/quiz9a.png" />
+				</div>
+
+			</section>
+
+			<section>
+				<h3>Traceplot Quiz!</h3>
+
+				<div>
+					<img data-src="img/quiz10.png" />
+				</div>
+
+			</section>
+
+			<section>
+				<h3>Traceplot Quiz!</h3>
+
+				<div>
+					<img data-src="img/quiz10a.png" />
+				</div>
+
+			</section>
+
+			<section>
+				<h3>Traceplot Quiz!</h3>
+
+				<div>
+					<img data-src="img/quiz11.png" />
+				</div>
+
+			</section>
+
+			<section>
+				<h3>Traceplot Quiz!</h3>
+
+				<div>
+					<img data-src="img/quiz11a.png" />
+				</div>
+
+			</section>
+
+			<section>
+				<h3>Traceplot Quiz!</h3>
+
+				<div>
+					<img data-src="img/quiz12.png" />
+				</div>
+
+			</section>
+
+			<section>
+				<h3>Traceplot Quiz!</h3>
+
+				<div>
+					<img data-src="img/quiz12a.png" />
+				</div>
+
+			</section>
+
+			<section>
+				<h3>Traceplot Quiz!</h3>
+
+				<div>
+					<img data-src="img/quiz13.png" />
+				</div>
+
+			</section>
+
+			<section>
+				<h3>Traceplot Quiz!</h3>
+
+				<div>
+					<img data-src="img/quiz13a.png" />
+				</div>
+
+			</section>
+
+			<section>
+				<h3>Traceplot Quiz!</h3>
+
+				<div>
+					<img data-src="img/quiz14.png" />
+				</div>
+
+			</section>
+
+			<section>
+				<h3>Traceplot Quiz!</h3>
+
+				<div>
+					<img data-src="img/quiz14a.png" />
+				</div>
+
+			</section>
+
+			<section>
+				<h3>Traceplot Quiz!</h3>
+
+				<div>
+					<img data-src="img/quiz15.png" />
+				</div>
+
+			</section>
+
+			<section>
+				<h3>Traceplot Quiz!</h3>
+
+				<div>
+					<img data-src="img/quiz15a.png" />
+				</div>
+
+			</section>
+
+			<section>
+				<h3>Traceplot Quiz!</h3>
+
+				<div>
+					<img data-src="img/quiz16.png" />
+				</div>
+
+			</section>
+
+			<section>
+				<h3>Traceplot Quiz!</h3>
+
+				<div>
+					<img data-src="img/quiz16a.png" />
+				</div>
+
+			</section>
+
+			<section>
+				<h3>Traceplot Quiz!</h3>
+
+				<div>
+					<img data-src="img/quiz17.png" />
+				</div>
+
+			</section>
+
+			<section>
+				<h3>Traceplot Quiz!</h3>
+
+				<div>
+					<img data-src="img/quiz17a.png" />
+				</div>
+
+			</section>
+
+			<section>
+				<h3>Traceplot Quiz!</h3>
+
+				<div>
+					<img data-src="img/quiz18.png" />
+				</div>
+
+			</section>
+
+			<section>
+				<h3>Traceplot Quiz!</h3>
+
+				<div>
+					<img data-src="img/quiz18a.png" />
+				</div>
+
+			</section>
+
+			<section>
+				<h3>Traceplot Quiz!</h3>
+
+				<div>
+					<img data-src="img/quiz19.png" />
+				</div>
+
+			</section>
+
+			<section>
+				<h3>Traceplot Quiz!</h3>
+
+				<div>
+					<img data-src="img/quiz19a.png" />
+				</div>
+
+			</section>
+
+			<section>
+				<h3>Traceplot Quiz!</h3>
+
+				<div>
+					<img data-src="img/quiz20.png" />
+				</div>
+
+			</section>
+
+			<section>
+				<h3>Traceplot Quiz!</h3>
+
+				<div>
+					<img data-src="img/quiz20a.png" />
+				</div>
+
+			</section>
+
+			<section>
+				<h3>Traceplot Quiz!</h3>
+
+				<div>
+					<img data-src="img/quiz21.png" />
+				</div>
+
+			</section>
+
+			<section>
+				<h3>Traceplot Quiz!</h3>
+
+				<div>
+					<img data-src="img/quiz21a.png" />
+				</div>
+
+			</section>
+
+			<section>
+				<h3>Traceplot Quiz!</h3>
+
+				<div>
+					<img data-src="img/quiz22.png" />
+				</div>
+
+			</section>
+
+			<section>
+				<h3>Traceplot Quiz!</h3>
+
+				<div>
+					<img data-src="img/quiz22a.png" />
+				</div>
+
+			</section>
+
+			<section>
+				<h3>Traceplot Quiz!</h3>
+
+				<div>
+					<img data-src="img/quiz23.png" />
+				</div>
+
+			</section>
+
+			<section>
+				<h3>Traceplot Quiz!</h3>
+
+				<div>
+					<img data-src="img/quiz23a.png" />
+				</div>
+
+			</section>
+
+			<section>
+				<h3>Traceplot Quiz!</h3>
+
+				<div>
+					<img data-src="img/quiz24.png" />
+				</div>
+
+			</section>
+
+			<section>
+				<h3>Traceplot Quiz!</h3>
+
+				<div>
+					<img data-src="img/quiz24a.png" />
+				</div>
+
+			</section>
+
+			<section>
+				<h3>Traceplot Quiz!</h3>
+
+				<div>
+					<img data-src="img/quiz25.png" />
+				</div>
+
+			</section>
+
+			<section>
+				<h3>Traceplot Quiz!</h3>
+
+				<div>
+					<img data-src="img/quiz25a.png" />
+				</div>
+
+			</section>
+
+			<section>
+				<h3>Traceplot Quiz!</h3>
+
+				<div>
+					<img data-src="img/quiz26.png" />
+				</div>
+
+			</section>
+
+			<section>
+				<h3>Traceplot Quiz!</h3>
+
+				<div>
+					<img data-src="img/quiz26a.png" />
+				</div>
+
+			</section>
+
+			<section>
+				<h3>Traceplot Quiz!</h3>
+
+				<div>
+					<img data-src="img/quiz27.png" />
+				</div>
+
+			</section>
+
+			<section>
+				<h3>Traceplot Quiz!</h3>
+
+				<div>
+					<img data-src="img/quiz27a.png" />
+				</div>
+
+			</section>
+
+			<section>
+				<h3>Traceplot Quiz!</h3>
+
+				<div>
+					<img data-src="img/quiz28.png" />
+				</div>
+
+			</section>
+
+			<section>
+				<h3>Traceplot Quiz!</h3>
+
+				<div>
+					<img data-src="img/quiz28a.png" />
+				</div>
+
+			</section>
+
+			<section>
+				<h3>Traceplot Quiz!</h3>
+
+				<div>
+					<img data-src="img/quiz29.png" />
+				</div>
+
+			</section>
+
+			<section>
+				<h3>Traceplot Quiz!</h3>
+
+				<div>
+					<img data-src="img/quiz29a.png" />
+				</div>
+
+			</section>
+
+			<section>
+				<h3>Traceplot Quiz!</h3>
+
+				<div>
+					<img data-src="img/quiz30.png" />
+				</div>
+
+			</section>
+
+			<section>
+				<h3>Traceplot Quiz!</h3>
+
+				<div>
+					<img data-src="img/quiz30a.png" />
+				</div>
+
+			</section>
+
+			<section>
+				<h3>Traceplot Quiz!</h3>
+
+				<div>
+					<img data-src="img/quiz31.png" />
+				</div>
+
+			</section>
+
+			<section>
+				<h3>Traceplot Quiz!</h3>
+
+				<div>
+					<img data-src="img/quiz31a.png" />
+				</div>
+
+			</section>
+
+			<section>
+				<h3>Traceplot Quiz!</h3>
+
+				<div>
+					<img data-src="img/quiz32.png" />
+				</div>
+
+			</section>
+
+			<section>
+				<h3>Traceplot Quiz!</h3>
+
+				<div>
+					<img data-src="img/quiz32a.png" />
+				</div>
+
+			</section>
+
+			<section>
+				<h3>Traceplot Quiz!</h3>
+
+				<div>
+					<img data-src="img/quiz33.png" />
+				</div>
+
+			</section>
+
+			<section>
+				<h3>Traceplot Quiz!</h3>
+
+				<div>
+					<img data-src="img/quiz33a.png" />
+				</div>
+
+			</section>
+
+			<section>
+				<h3>Traceplot Quiz!</h3>
+
+				<div>
+					<img data-src="img/quiz34.png" />
+				</div>
+
+			</section>
+
+			<section>
+				<h3>Traceplot Quiz!</h3>
+
+				<div>
+					<img data-src="img/quiz34a.png" />
+				</div>
+
+			</section>
+
+			<section>
+				<h3>Traceplot Quiz!</h3>
+
+				<div>
+					<img data-src="img/quiz35.png" />
+				</div>
+
+			</section>
+
+			<section>
+				<h3>Traceplot Quiz!</h3>
+
+				<div>
+					<img data-src="img/quiz35a.png" />
+				</div>
+
+			</section>
+
+			<section>
+				<h3>Real libraries</h3>
+
+				<pre><code data-trim data-noescape class="python">import arviz as az
+import pymc3 as pm
+
+with pm.Model():
+    x = pm.Normal('x')
+    trace = pm.sample(step=pm.Metropolis())
+
+az.plot_trace(trace)</code></pre>
+
+				<div>
+					<img data-src="img/pymc_trace.png" />
+				</div>
+
+			</section>
+
+
+		</div>
+	</div>
+
+	<!-- <script src="js/reveal.js"></script> -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/js/reveal.js"
+		integrity="sha256-ed+I6eG+vozrXbKtA3F8nbodPcClB/wwyDQQ2LIT5Mk=" crossorigin="anonymous"></script>
+
+	<script>
+		// More info about config & dependencies:
+		// - https://github.com/hakimel/reveal.js#configuration
+		// - https://github.com/hakimel/reveal.js#dependencies
+		Reveal.initialize({
+			dependencies: [{
+					src: 'plugin/markdown/marked.js'
+				},
+				{
+					src: 'plugin/markdown/markdown.js'
+				},
+				{
+					src: 'plugin/notes/notes.js',
+					async: true
+				},
+				{
+					src: 'plugin/highlight/highlight.js',
+					async: true
+				},
+				{
+					src: 'plugin/math/math.js',
+					async: true
+				},
+			],
+			history: true,
+			math: {
+				mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
+				config: 'TeX-AMS_HTML-full' // See http://docs.mathjax.org/en/latest/config-files.html
+			},
+			transition: "none",
+		});
+	</script>
+</body>
+
+</html>
