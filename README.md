@@ -38,7 +38,7 @@ If you do not already have the [Anaconda distribution](https://www.anaconda.com/
 If this is the first time you're setting up your compute environment, use the `conda` to **create an environment**.
 
 ```bash
-conda env create -n bayes-eval
+conda create -n bayes-eval
 ```
 
 To **activate the environment**, use the `conda activate` command.
