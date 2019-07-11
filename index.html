@@ -39,7 +39,7 @@
             <td align="right"><a href="https://twitter.com/colindcarroll">@colindcarroll</a></td>
         </tr>
         <tr>
-        <td colspan="2" id='graph' align="center"> </td>
+            <td colspan="2" id='graph' align="center"> </td>
         </tr>
     </table>
 
@@ -51,6 +51,7 @@
     <h3>Contents:</h3>
     <ol>
         <li><a href="#Prereading">Optional Prereading</a> </li>
+        <li><a href="#Slides">Slides</a></li>
         <li><a href="#Installation">Installation</a></li>
         <li><a href="#Acknowledgements">Acknowledgements</a></li>
         <li><a href="#Feedback">Feedback</a></li>
@@ -58,101 +59,114 @@
 
     <h2 id="Prereading">Optional Prereading</h2>
     <p>
-     No prior work is required for this tutorial but if you'd like to prepare
-     we've provided 
-    <a href="https://github.com/canyon289/bayesian-model-evaluation/blob/master/HelpfulResources.md
+        No prior work is required for this tutorial but if you'd like to prepare
+        we've provided
+        <a href="https://github.com/canyon289/bayesian-model-evaluation/blob/master/HelpfulResources.md
 ">a list of resources </a>
-    <h2 id="Installation">Installation</h2>
 
-    <ol>
-        <li><em>Clone the repository locally</em>
-            <p>In your terminal, use <code>git</code> to clone the repository locally:</p>
+        <h2 id="Slides">Slides</h2>
+        The material is all covered in notebooks, but slides motivating MCMC and introducing trace plots are available
+        <a href="lessonplans/mcmc_basics/">here</a>.
 
-            <pre class="code">
+        <h2 id="Installation">Installation</h2>
+
+        <ol>
+            <li><em>Clone the repository locally</em>
+                <p>In your terminal, use <code>git</code> to clone the repository locally:</p>
+
+                <pre class="code">
 git clone git@github.com:arviz-devs/bayesian-model-evaluation.git
 </pre>
 
-            <p>Alternatively, you can download the zip file of the repository at the top of the main page of the
-                repository. If you prefer not to use git or don't have experience with it, this a good option.</p>
-        </li>
+                <p>Alternatively, you can download the zip file of the repository at the top of the main page of the
+                    repository. If you prefer not to use git or don't have experience with it, this a good option.</p>
+            </li>
 
-        <li><em>Download Anaconda (if you haven't already)</em>
+            <li><em>Download Anaconda (if you haven't already)</em>
 
-            <p>If you do not already have the <a href="https://www.anaconda.com/download/">Anaconda Distribution</a> of
-                Python 3, go get it (note: you can also set up your project environment w/out Anaconda using
-                <code>pip</code> to install the required packages; however Anaconda is great for data science and we
-                encourage you to use it).</p>
-        </li>
+                <p>If you do not already have the <a href="https://www.anaconda.com/download/">Anaconda Distribution</a>
+                    of
+                    Python 3, go get it (note: you can also set up your project environment w/out Anaconda using
+                    <code>pip</code> to install the required packages; however Anaconda is great for data science and we
+                    encourage you to use it).</p>
+            </li>
 
-        <li><em>Set up your environment</em>
+            <li><em>Set up your environment</em>
 
-            <ol type="a">
-                <li><em><code>conda</code> users</em>
-                    <p>If this is the first time you are setting up your compute environment, use <code>conda</code> to
-                        <em>create an environment</em>:</p>
-                    <pre class="code">conda env create -n bayes-eval</pre>
+                <ol type="a">
+                    <li><em><code>conda</code> users</em>
+                        <p>If this is the first time you are setting up your compute environment, use <code>conda</code>
+                            to
+                            <em>create an environment</em>:</p>
+                        <pre class="code">conda env create -n bayes-eval</pre>
 
-                    <p>To <em>activate the environment</em>, use the <code>conda activate</code> command:</p>
-                    <pre class="code">conda activate bayes-eval</pre>
+                        <p>To <em>activate the environment</em>, use the <code>conda activate</code> command:</p>
+                        <pre class="code">conda activate bayes-eval</pre>
 
-                    <p><em>If you get an error activating the environment</em>, try to use the older <code>source
-                            activate</code> command:</p>
-                    <pre class="code">source activate bayes-eval</pre>
+                        <p><em>If you get an error activating the environment</em>, try to use the older <code>source
+                                activate</code> command:</p>
+                        <pre class="code">source activate bayes-eval</pre>
 
-                    <p>Then follow the instructions for <code>pip</code> users.</p>
-                </li>
-                <li><em><code>pip</code> users</em>
-                    <p>Install all of the packages listed in the <code>requirements.txt</code> file:</p>
-                    <pre class="code">pip install -r requirements.txt</pre>
-                </li>
-                <li><em><code>Docker</code> users</em>
-                    <p>An image can be built from the root directory of the repository using the following command. This
-                        will build an image on your computer with all dependencies and environment installed:</p>
-                    <pre class="code">./scripts/container.sh --build</pre>
-                    <p>Once an image is built a container can be started with the command:</p>
-                    <pre class="code">./scripts/container.sh --notebook</pre>
-                    <p>In your terminal a URL for the notebook server will be displayed. Copy and paste that into a
-                        browser. With that you'll have Jupyter in a container! If you're using docker you can skip step
-                        4.</p>
-                </li>
-                <li><em>Do not want to mess with dev ops</em>
-                    <p>You can click <a
-                            href="https://mybinder.org/v2/gh/arviz-devs/bayesian-model-evaluation/master"><img
-                                src="https://mybinder.org/badge.svg" /></a> to get a Binder session on which you can
-                        compute and code.</p>
-                </li>
-            </ol>
+                        <p>Then follow the instructions for <code>pip</code> users.</p>
+                    </li>
+                    <li><em><code>pip</code> users</em>
+                        <p>Install all of the packages listed in the <code>requirements.txt</code> file:</p>
+                        <pre class="code">pip install -r requirements.txt</pre>
+                    </li>
+                    <li><em><code>Docker</code> users</em>
+                        <p>An image can be built from the root directory of the repository using the following command.
+                            This
+                            will build an image on your computer with all dependencies and environment installed:</p>
+                        <pre class="code">./scripts/container.sh --build</pre>
+                        <p>Once an image is built a container can be started with the command:</p>
+                        <pre class="code">./scripts/container.sh --notebook</pre>
+                        <p>In your terminal a URL for the notebook server will be displayed. Copy and paste that into a
+                            browser. With that you'll have Jupyter in a container! If you're using docker you can skip
+                            step
+                            4.</p>
+                    </li>
+                    <li><em>Do not want to mess with dev ops</em>
+                        <p>You can click <a
+                                href="https://mybinder.org/v2/gh/arviz-devs/bayesian-model-evaluation/master"><img
+                                    src="https://mybinder.org/badge.svg" /></a> to get a Binder session on which you can
+                            compute and code.</p>
+                    </li>
+                </ol>
 
-        <li><em>Open Jupyter Lab!</em>
-            <p>In the terminal, navigate to this directory and execute <code>jupyter lab</code></p>
+            <li><em>Open Jupyter Lab!</em>
+                <p>In the terminal, navigate to this directory and execute <code>jupyter lab</code></p>
 
-            <p>Navigate to the <code>notebooks</code> directory, then <code>1_BayesianWorkflow</code>, and open the
-                notebook <code>1_Ins_BayesRefresher.ipynb</code>.</p>
+                <p>Navigate to the <code>notebooks</code> directory, then <code>1_BayesianWorkflow</code>, and open the
+                    notebook <code>1_Ins_BayesRefresher.ipynb</code>.</p>
 
-            <ol type="a">
-                <li><em>Want to view static notebooks</em>
-                    <p>If you are only interested in viewing the static versions of the notebooks, you can <a
-                            href="https://github.com/arviz-devs/bayesian-model-evaluation/tree/master/notebooks">view
-                            them on github</a>.</p>
-                </li>
-            </ol>
+                <ol type="a">
+                    <li><em>Want to view static notebooks</em>
+                        <p>If you are only interested in viewing the static versions of the notebooks, you can <a
+                                href="https://github.com/arviz-devs/bayesian-model-evaluation/tree/master/notebooks">view
+                                them on github</a>.</p>
+                    </li>
+                </ol>
 
-        </li>
-    </ol>
+            </li>
+        </ol>
 
-    <h2 id="Acknowledgements">Acknowledgements</h2>
-    <p>We would like to thank the whole Bayes community for being open with learnings and material. For this tutorial in
-        particular we'd like to thank Ari Hartikainen, Osvaldo Martin, and Eric Ma for providing feedback and content.
-    </p>
+        <h2 id="Acknowledgements">Acknowledgements</h2>
+        <p>We would like to thank the whole Bayes community for being open with learnings and material. For this
+            tutorial in
+            particular we'd like to thank Ari Hartikainen, Osvaldo Martin, and Eric Ma for providing feedback and
+            content.
+        </p>
 
-    <h2 id="Feedback">Feedback</h2>
+        <h2 id="Feedback">Feedback</h2>
 
-    <p>We have a Google form we would love you to use <a href="https://forms.gle/cUStHUo5k9yZcrUn9">here</a>. We'll use
-        this information to help improve the teaching and delivery of the material. <a
-            href="https://github.com/arviz-devs/bayesian-model-evaluation/issues">Issues</a> and <a
-            href="https://github.com/arviz-devs/bayesian-model-evaluation/pulls">pull requests</a> are also welcomed and
-        encouraged if you would like!
-    </p>
+        <p>We have a Google form we would love you to use <a href="https://forms.gle/cUStHUo5k9yZcrUn9">here</a>. We'll
+            use
+            this information to help improve the teaching and delivery of the material. <a
+                href="https://github.com/arviz-devs/bayesian-model-evaluation/issues">Issues</a> and <a
+                href="https://github.com/arviz-devs/bayesian-model-evaluation/pulls">pull requests</a> are also welcomed
+            and
+            encouraged if you would like!
+        </p>
 
 </body>
 
